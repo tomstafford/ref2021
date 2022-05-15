@@ -22,3 +22,8 @@ Every other institution submitted fewer research staff, so they are represented 
 You can put these together in a video
 
 ![](https://github.com/tomstafford/ref2021/blob/main/fast.mp4)
+
+This repo contains plots for all institutions, videos of the images stitched together which you can download([slow](https://github.com/tomstafford/ref2021/blob/main/slow.mp4), [fast](https://github.com/tomstafford/ref2021/blob/main/fast.mp4), [fastest](https://github.com/tomstafford/ref2021/blob/main/faster.mp4)) and python code for making the plots
+
+They're called treemap plots, thanks Emily!
+
