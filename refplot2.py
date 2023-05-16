@@ -20,6 +20,8 @@ https://results2021.ref.ac.uk/profiles/export-all
 
 """
 
+SAVEENV = False #toggle, export conda environment
+
 #set up environment
 
 import socket #to get host machine identity
@@ -37,8 +39,12 @@ print("identifying host machine")
 if 'tom' in socket.gethostname():
     os.chdir('/home/tom/t.stafford@sheffield.ac.uk/A_UNIVERSITY/toys/ref2021')
 else:
-    print("I don't know where I am! ")
+    print("Running in expected location, we are in :" + os.getcwd())
     print("Maybe the script will run anyway...")
+    
+#export environment in which this was last run
+if SAVEENV:
+    os.system('conda env export > environment2.yml') 
     
 def UoAshort(inval):
     '''replace UoA names with a short version'''
@@ -211,7 +217,7 @@ for place in df['Institution name'].unique():
     plt.fill([0, maxdim, maxdim, 0],[0,0,maxdim,maxdim],'lightgray')
     
     #instutitonal treemap
-    squarify.plot(sizes=sizes, label=label[:21], alpha=0.6,color=mapped_list,text_kwargs={'fontsize': fsize})
+    squarify.plot(sizes=sizes, label=label[:21], alpha=0.6,color=mapped_list,text_kwargs={'fontsize': fsize, 'rotation': 25})
     #  put name of place on plot
     annotext=instshort(place)+' ('+str(int(placeFTE))+' FTE)'
     plt.title(annotext)

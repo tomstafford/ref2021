@@ -1,4 +1,4 @@
-name: munge
+name: ref2021
 channels:
   - defaults
 dependencies:
@@ -150,5 +150,6 @@ dependencies:
   - pip:
     - distro==1.4.0
     - pyreadstat==0.2.8
+    - squarify==0.4.3
     - tabula-py==1.4.1
-prefix: /home/tom/miniconda3/envs/munge
+prefix: /home/tom/miniconda3/envs/ref2021
