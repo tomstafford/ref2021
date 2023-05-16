@@ -30,7 +30,7 @@ import numpy as np #number function
 import pandas as pd #dataframes!
 import matplotlib.pyplot as plt #plotting function
 #matplotlib named colours https://matplotlib.org/stable/gallery/color/named_colors.html
-import squarify #treeplots
+import squarify #treeplots - you may need to use pip to install this if the conda environment hasn't captured it
 import seaborn as sns #fancy plots
 from matplotlib import cm #making colour maps
 
@@ -44,7 +44,7 @@ else:
     
 #export environment in which this was last run
 if SAVEENV:
-    os.system('conda env export > environment2.yml') 
+    os.system('conda env export > environment.yml') 
     
 def UoAshort(inval):
     '''replace UoA names with a short version'''
@@ -251,5 +251,5 @@ os.system(txt)
 txt="ffmpeg -framerate 0.5 -pattern_type glob -i 'figs/squares/*.png'  -c:v libx264 -preset slow -crf 18 -c:a copy -pix_fmt yuv420p -vf 'scale=trunc(iw/2)*2:trunc(ih/2)*2' fast.mp4"
 os.system(txt)
 
-txt="ffmpeg -framerate 1 -pattern_type glob -i 'figs/squares/*.png'  -c:v libx264 -preset slow -crf 18 -c:a copy -pix_fmt yuv420p -vf 'scale=trunc(iw/2)*2:trunc(ih/2)*2' faster.mp4"
+txt="ffmpeg -framerate 1.5 -pattern_type glob -i 'figs/squares/*.png'  -c:v libx264 -preset slow -crf 18 -c:a copy -pix_fmt yuv420p -vf 'scale=trunc(iw/2)*2:trunc(ih/2)*2' faster.mp4"
 os.system(txt)
